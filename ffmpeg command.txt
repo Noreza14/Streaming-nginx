@@ -1,1 +1,2 @@
 ffmpeg -i C:/nginx/html/vedio/sample.mp4 -codec: copy -start_number 0 -hls_time 10 -hls_list_size 0 -f hls C:/nginx/html/vedio/stream.m3u8
+ffmpeg -rtsp_transport tcp -i rtsp://admin:hik12345@39.61.48.142:1080/Streaming/channels/102 -c:v  copy -f hls -hls_time 2 -hls_list_size 5 -hls_flags delete_segments "C:\nginx\html\video\stream.m3u8" -loglevel repeat+level+trace
